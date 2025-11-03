@@ -2,6 +2,6 @@
 - **2025-11-3:** Released a comprehensive item list for the Dexora Dataset collected in real-world.
 
 
-# Dexora-Dataset
+# Dataset
 Dexora Dataset Description
 
