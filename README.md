@@ -1,4 +1,4 @@
-# News and Update
+# News & Update
 
 
 # Dexora-Dataset
