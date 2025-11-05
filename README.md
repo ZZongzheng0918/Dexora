@@ -11,6 +11,6 @@ This part hosts the **Dexora Dataset**, a real-world robotic manipulation datase
 | Object Name (EN & CN) | Clear identification |
 | Task Type | pick-and-place / assemble / articulation / dexterous |
 | Purchase Link | Ready-to-buy links on **Taobao** & **Amazon** |
-## 🔗 Access the List
+
  **[Google Spreadsheet – Dexora Real-world Item List](https://docs.google.com/spreadsheets/d/1L2cgqvIukVziXc0OwpqNkb5j8c3bzC_K/edit?usp=sharing&ouid=118201816718027822857&rtpof=true&sd=true)**
 
