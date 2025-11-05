@@ -3,7 +3,8 @@
 
 
 # Dexora Dataset
-To help researchers quickly reproduce or extend our experiments, we share a **comprehensive item list** that contains every object we used, together with:
+## 📌 Overview
+This part hosts the **Dexora Dataset**, a real-world robotic manipulation dataset.  To help researchers quickly reproduce or extend our experiments, we share a **comprehensive item list** that contains every object we used, together with:
 
 | Column | Description |
 |--------|-------------|
