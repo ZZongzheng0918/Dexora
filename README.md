@@ -13,3 +13,13 @@ This part hosts the **Dexora Dataset**, a real-world robotic manipulation datase
 | Purchase Link | Ready-to-buy links on **Taobao** & **Amazon** |
 ## 🔗 Access the List
 👉 **[Google Spreadsheet – Dexora Item List](https://docs.google.com/spreadsheets/d/1L2cgqvIukVziXc0OwpqNkb5j8c3bzC_K/edit?usp=sharing&ouid=118201816718027822857&rtpof=true&sd=true)**
+
+
+```bibtex
+@misc{dexora2025,
+  title={Dexora Dataset: Real-Robot Item List & Purchase Links},
+  author={Your Name et al.},
+  year={2025},
+  publisher={GitHub},
+  howpublished={\url{https://github.com/<your-username>/Dexora}}
+}
