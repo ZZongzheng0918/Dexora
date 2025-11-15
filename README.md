@@ -4,7 +4,6 @@
 
 # Dexora Dataset
 <img width="1937" height="508" alt="image" src="https://github.com/user-attachments/assets/ff55cc47-6e69-49d8-b93c-2af47a1d3a67" />
-！[Robot Arm Task Trajectory Distribution](https://github.com/user-attachments/assets/9227e2fa-f454-4426-b10e-eced39e9f94b)
 
 ## Overview
 This part hosts the **Dexora Dataset**, a real-world robotic manipulation dataset.  To help researchers quickly reproduce or extend our experiments, we share a **comprehensive item list** that contains every object we used, together with:
