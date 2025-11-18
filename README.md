@@ -8,9 +8,9 @@
 ## Overview
 ![Dexora Real-World Dataset](assets/image/real-data.JPG)
 
-![Categorized Robot Task Trajectory Distribution](assets/image/Categorized Robot Task Trajectory Distribution.png)
+![Categorized Robot Task Trajectory Distribution](assets/image/Categorized%20Robot%20Task%20Trajectory%20Distribution.png)
 
-![Robot Arm Task Trajectory Distribution](assets/image/Robot Arm Task Trajectory Distribution.png)
+![Robot Arm Task Trajectory Distribution](assets/image/Robot%20Arm%20Task%20Trajectory%20Distribution.png)
 
 This part hosts the **Dexora Dataset**, a real-world robotic manipulation dataset.  To help researchers quickly reproduce or extend our experiments, we share a **comprehensive item list** that contains every object we used, together with:
 
