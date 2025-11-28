@@ -9,14 +9,14 @@
 </p>
 
 <p align="center">
-  <img src="assets/teaser.gif" alt="Dexora Teaser" width="80%">
+  <img src="assets/image/teaser.gif" alt="Dexora Teaser" width="80%">
 </p>
 
 ---
 
 ## Abstract
 
-**Dexora** is an open-source **Vision-Language-Action (VLA) system** designed for **36-DoF dual-arm, dual-hand dexterous manipulation**. Unlike prior gripper-centric datasets and policies, Dexora targets **high-DoF, bimanual dexterity** in both simulation and the real world, enabling complex tasks such as in-hand re-orientation, tool use, and multi-step assembly. Our system combines large-scale simulated data (**100K episodes, 6.5M frames**) with a carefully curated real-world dataset (**10K episodes, 3.2M frames**) collected via a **hybrid teleoperation setup (Exoskeleton + Vision Pro)**. To make high-DoF manipulation research **reproducible and scalable**, we follow the **LIBERO-2.0 data standard** and release a detailed **object inventory with purchase links**, so that other labs can recreate our environments with minimal friction.
+**Dexora** is an open-source **Vision-Language-Action (VLA) system** designed for **36-DoF dual-arm, dual-hand dexterous manipulation**. Unlike prior gripper-centric datasets and policies, Dexora targets **high-DoF, bimanual dexterity** in both simulation and the real world, enabling complex tasks such as in-hand re-orientation, tool use, and multi-step assembly. Our system combines large-scale simulated data (**100K episodes, 6.5M frames**) with a carefully curated real-world dataset (**10K episodes, 3.2M frames**) collected via a **hybrid teleoperation setup (Exoskeleton + Vision Pro)**. To make high-DoF manipulation research **reproducible and scalable**, we follow the **LIBERO-2.1 data standard** and release a detailed **object inventory with purchase links**, so that other labs can recreate our environments with minimal friction.
 
 ---
 
@@ -52,7 +52,7 @@ The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M 
   <i>Fig 2. <b>Task Taxonomy & Action Distribution.</b> Unlike standard gripper datasets, Dexora emphasizes high-DoF dexterity. The real-world data distribution includes <b>Dexterous Manipulation (20%)</b> (e.g., <i>Twist Cap</i>, <i>Use Pen</i>, <i>Cut Leek</i>) and <b>Assembly (15%)</b> (e.g., <i>Separate Nested Bowls</i>, <i>Stack Ring Blocks</i>), in addition to Articulated Objects (10%) and Pick-and-Place (55%).</i>
 </p>
 
-Both the episodes and annotations follow the **LIBERO-2.0 standard**, including synchronized **RGB(-D) observations**, **robot proprioception**, **actions**, and **language instructions**.
+Both the episodes and annotations follow the **LIBERO-2.1 standard**, including synchronized **RGB observations**, **robot proprioception**, **actions**, and **language instructions**.
 
 ### B. Dexora Simulation Dataset (Large-Scale)
 
@@ -97,7 +97,7 @@ You can **filter by task type**, **category**, or **store** to design controlled
 
 ## 📂 Data Structure
 
-Dexora follows the **LIBERO-2.0** dataset standard. Each episode is stored as a self-contained trajectory with:
+Dexora follows the **LIBERO-2.1** dataset standard. Each episode is stored as a self-contained trajectory with:
 
 - **Observations**: multi-view RGB (and optionally depth), segmentation masks (when available).
 - **Robot State**: joint positions/velocities for dual arms and dual hands, gripper/hand states.
@@ -107,35 +107,48 @@ Dexora follows the **LIBERO-2.0** dataset standard. Each episode is stored as a 
 An example high-level directory layout is:
 
 ```text
-dexora/
-  sim/
-    tasks/
-      pick_and_place/
-        episodes/
-          episode_000001.h5
-          episode_000002.h5
-          ...
-      assembly/
-        episodes/
-          episode_000001.h5
-          ...
-  real/
-    tasks/
-      dexterous/
-        episodes/
-          episode_000001.h5
-          ...
-      articulation/
-        episodes/
-          episode_000001.h5
-          ...
-  metadata/
-    object_inventory.csv        # Export of the Google Sheet schema
-    task_taxonomy.yaml          # Mapping from task names to categories
-    camera_calibration.json     # Intrinsics/extrinsics for each camera
+data
+├── real
+│   ├── articulation
+│   │   └── ...
+│   ├── assembly
+│   │   └── ...
+│   ├── dexterous manipulation                     
+│   │   ├── data 
+│   │   │   ├── chunk-000 
+│   │   │   │   ├── episode_000000.parquet
+│   │   │   │   ├── episode_000001.parquet
+│   │   │   │   ├── episode_000002.parquet
+│   │   │   │   ├── ...
+│   │   │   ├── chunk-001
+│   │   │   │   ├── ...
+│   │   │   ├── ...
+│   │   ├── meta
+│   │   │   ├── episodes.jsonl  
+│   │   │   ├── episodes_stats.jsonl   
+│   │   │   ├── info.json      
+│   │   │   ├── modality.json  
+│   │   │   ├── stats.json     
+│   │   │   ├── tasks.jsonl   
+│   │   ├── videos
+│   │   │   ├── chunk-000 
+│   │   │   │   ├── observation.images.front
+│   │   │   │   │   ├── episode_000000.mp4
+│   │   │   │   │   ├── episode_000001.mp4
+│   │   │   │   │   ├── ...
+│   │   │   │   ├── ...
+│   │   │   ├── chunk-001
+│   │   │   │   ├── ...
+│   │   │   ├── ...
+│   ├── pick_and_place
+│   │   └── ...
+│   ├── ...
+├── sim
+│   ├── ...
+
 ```
 
-> **Note**: The exact folder names and file formats may be updated as we finalize the public release, but the overall **episode-centric LIBERO-2.0 structure** will be preserved.
+> **Note**: The exact folder names and file formats may be updated as we finalize the public release, but the overall **episode-centric LIBERO-2.1 structure** will be preserved.
 
 ---
 
@@ -217,3 +230,5 @@ If you find Dexora useful in your research, please consider citing our paper:
 ---
 
 For questions, collaborations, or feedback, please feel free to open an issue or contact the maintainers via the project page.
+
+
