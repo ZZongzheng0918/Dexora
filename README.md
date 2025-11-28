@@ -1,24 +1,219 @@
-# News & Update
-- **2025-11-3:** Released a comprehensive item list for the Dexora Dataset collected in real-world.
-- **2025-12-1:** 
-# Dexora Dataset
+<p align="center">
+  <h2>Dexora: Open-Source VLA for High-DoF Bimanual Dexterity</h2>
+</p>
 
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/arXiv-2026.xxxxx-B31B1B.svg" alt="arXiv"></a>
+  <a href="#"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
+</p>
 
-## Overview
-![Dexora Real-World Dataset](assets/image/real-data.JPG)
+<p align="center">
+  <img src="assets/teaser.gif" alt="Dexora Teaser" width="80%">
+</p>
 
-![Categorized Robot Task Trajectory Distribution](assets/image/Categorized%20Robot%20Task%20Trajectory%20Distribution.png)
+---
 
-![Robot Arm Task Trajectory Distribution](assets/image/Robot%20Arm%20Task%20Trajectory%20Distribution.png)
+## Abstract
 
-This part hosts the **Dexora Dataset**, a real-world robotic manipulation dataset.  To help researchers quickly reproduce or extend our experiments, we share a **comprehensive item list** that contains every object we used, together with:
+**Dexora** is an open-source **Vision-Language-Action (VLA) system** designed for **36-DoF dual-arm, dual-hand dexterous manipulation**. Unlike prior gripper-centric datasets and policies, Dexora targets **high-DoF, bimanual dexterity** in both simulation and the real world, enabling complex tasks such as in-hand re-orientation, tool use, and multi-step assembly. Our system combines large-scale simulated data (**100K episodes, 6.5M frames**) with a carefully curated real-world dataset (**10K episodes, 3.2M frames**) collected via a **hybrid teleoperation setup (Exoskeleton + Vision Pro)**. To make high-DoF manipulation research **reproducible and scalable**, we follow the **LIBERO-2.0 data standard** and release a detailed **object inventory with purchase links**, so that other labs can recreate our environments with minimal friction.
 
-| Column | Description |
-|--------|-------------|
-| Object Name (EN & CN) | Clear identification |
-| Task Type | pick-and-place / assemble / articulation / dexterous |
-| Purchase Link | Ready-to-buy links on **Taobao** & **Amazon** |
+---
 
- **[Google Spreadsheet – Dexora Real-world Item List](https://docs.google.com/spreadsheets/d/1L2cgqvIukVziXc0OwpqNkb5j8c3bzC_K/edit?usp=sharing&ouid=118201816718027822857&rtpof=true&sd=true)**
+## 🔥 News & Updates
 
+- **2025-11-03**: Released the comprehensive **Real-world Item List** (**347 objects, 17 categories**) with purchase links for reproducible experiments.
+- **2025-12-01**: Released the full **Real-World Dataset** (**10K episodes**) and **Simulation Dataset** (**100K episodes**) on Hugging Face.
 
+---
+
+## 📊 Dataset Overview
+
+The Dexora corpus combines **high-fidelity real-world teleoperation data** with a **large-scale simulated dataset** designed to match the embodiment of the physical robot.
+
+### A. Dexora Real-World Dataset (High-Fidelity)
+
+The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M frames**, and **177.5 hours** of data. Demonstrations are collected using a **hybrid teleoperation system** that couples an **Exoskeleton** (for arm control) with **Vision Pro** (for dexterous hand control), enabling precise 36-DoF bimanual manipulation on real hardware.
+
+<p align="center">
+  <img src="assets/image/real-data.JPG" alt="Dexora Real-World Dataset Mosaic" width="90%">
+</p>
+
+<p align="center">
+  <i>Fig 1. <b>High-Fidelity Real-World Scenes.</b> Collected via our hybrid teleoperation system (Exoskeleton for arm + Vision Pro for hand), this dataset covers <b>347 objects</b> across diverse environments. It captures varying lighting conditions, background clutter, and precise bimanual interactions essential for robust policy learning.</i>
+</p>
+
+<p align="center">
+  <img src="assets/image/Categorized%20Robot%20Task%20Trajectory%20Distribution.png" alt="Dexora Task Taxonomy" width="48%">
+  <img src="assets/image/Robot%20Arm%20Task%20Trajectory%20Distribution.png" alt="Dexora Robot Arm Trajectory Distribution" width="48%">
+</p>
+
+<p align="center">
+  <i>Fig 2. <b>Task Taxonomy & Action Distribution.</b> Unlike standard gripper datasets, Dexora emphasizes high-DoF dexterity. The real-world data distribution includes <b>Dexterous Manipulation (20%)</b> (e.g., <i>Twist Cap</i>, <i>Use Pen</i>, <i>Cut Leek</i>) and <b>Assembly (15%)</b> (e.g., <i>Separate Nested Bowls</i>, <i>Stack Ring Blocks</i>), in addition to Articulated Objects (10%) and Pick-and-Place (55%).</i>
+</p>
+
+Both the episodes and annotations follow the **LIBERO-2.0 standard**, including synchronized **RGB(-D) observations**, **robot proprioception**, **actions**, and **language instructions**.
+
+### B. Dexora Simulation Dataset (Large-Scale)
+
+The Dexora simulation dataset contains **100K episodes** generated in **MuJoCo**, using the same **36-DoF dual-arm, dual-hand** embodiment as the real robot. It provides large-scale, embodiment-matched experience focused on core skills such as **pick-and-place**, **assembly**, and **articulation**, which can be used for pre-training basic competence before **fine-tuning on the real-world dataset**.
+
+### Summary Statistics (Sim vs Real)
+
+| **Split**        | **Episodes** | **Frames** | **Hours (approx.)** | **Task Types**                                                                 |
+| :--------------- | -----------: | ---------: | -------------------: | :----------------------------------------------------------------------------- |
+| **Simulated**    | **100K**     | **6.5M**   | TBD                  | Pick-and-place, assembly, articulation, dexterous manipulation, long-horizon  |
+| **Real-World**   | **10K**      | **3.2M**   | **177.5**            | Teleoperated bimanual tasks with high-DoF hands, cluttered scenes, fine-grain object interactions |
+
+---
+
+## 📦 Object Inventory & Reproducibility
+
+Reproducibility is a **core value** of Dexora. To enable other labs and industry teams to **faithfully recreate** our environments, we release a **curated object inventory** that mirrors the physical setup used in our real-world experiments.
+
+- **Scale**: **347 objects** across **17 semantic categories** (e.g., tools, containers, articulated objects, deformables, daily-use items).
+- **Coverage**: Objects are chosen to stress **dexterous control**, **bimanual coordination**, and **long-horizon manipulation**.
+- **Procurement**: Every item is linked to **Taobao** and/or **Amazon**, so researchers can rebuild the setup with minimal effort.
+
+<p align="center">
+  <a href="https://docs.google.com/spreadsheets/d/1L2cgqvIukVziXc0OwpqNkb5j8c3bzC_K/edit?usp=sharing">
+    <b>📑 Access Dexora Real-world Item List (Google Sheet)</b>
+  </a>
+</p>
+
+### Inventory Metadata Schema
+
+The released Google Sheet follows the schema below:
+
+| Column                     | Description                                                                 |
+| :------------------------- | :-------------------------------------------------------------------------- |
+| **Object Name (EN & CN)** | Bilingual identification for global researchers.                            |
+| **Task Type**             | One of: `pick-and-place`, `assemble`, `articulation`, `dexterous`.          |
+| **Purchase Link**         | Direct links to **Taobao** & **Amazon** for easy procurement and restock.   |
+
+You can **filter by task type**, **category**, or **store** to design controlled benchmarks or new task suites on top of Dexora.
+
+---
+
+## 📂 Data Structure
+
+Dexora follows the **LIBERO-2.0** dataset standard. Each episode is stored as a self-contained trajectory with:
+
+- **Observations**: multi-view RGB (and optionally depth), segmentation masks (when available).
+- **Robot State**: joint positions/velocities for dual arms and dual hands, gripper/hand states.
+- **Actions**: low-level control commands compatible with 36-DoF bimanual control.
+- **Language**: high-level task descriptions and step-wise subgoal annotations (where applicable).
+
+An example high-level directory layout is:
+
+```text
+dexora/
+  sim/
+    tasks/
+      pick_and_place/
+        episodes/
+          episode_000001.h5
+          episode_000002.h5
+          ...
+      assembly/
+        episodes/
+          episode_000001.h5
+          ...
+  real/
+    tasks/
+      dexterous/
+        episodes/
+          episode_000001.h5
+          ...
+      articulation/
+        episodes/
+          episode_000001.h5
+          ...
+  metadata/
+    object_inventory.csv        # Export of the Google Sheet schema
+    task_taxonomy.yaml          # Mapping from task names to categories
+    camera_calibration.json     # Intrinsics/extrinsics for each camera
+```
+
+> **Note**: The exact folder names and file formats may be updated as we finalize the public release, but the overall **episode-centric LIBERO-2.0 structure** will be preserved.
+
+---
+
+## 📥 Usage
+
+### 1. Environment Setup
+
+We recommend using **conda** to manage dependencies:
+
+```bash
+conda create -n dexora python=3.10 -y
+conda activate dexora
+
+# Clone this repository
+git clone <your-dexora-repo-url>.git
+cd Dexora
+
+# Install Python dependencies (example)
+pip install -r requirements.txt
+```
+
+If you plan to train or fine-tune VLAs, please ensure that **PyTorch**, **CUDA**, and any required simulation backends (e.g., Isaac, Mujoco) are installed according to your hardware.
+
+### 2. Downloading the Dataset
+
+- **Simulated Dexora**: Download links will be provided on the **project page** (see badge above).
+- **Real-World Dexora**: High-resolution teleoperation data (RGB, proprio, actions) will be hosted via a public storage service (e.g., academic server / cloud bucket).
+
+Typical usage:
+
+```bash
+# Example directory where you store data
+export DEXORA_DATA=/path/to/dexora
+
+# (Optional) Symlink data into this repo
+ln -s $DEXORA_DATA data
+```
+
+### 3. Loading Episodes (Example)
+
+Below is a minimal Python snippet illustrating how to iterate over LIBERO-2.0-style episodes in Dexora:
+
+```python
+import h5py
+from pathlib import Path
+
+root = Path("/path/to/dexora/real/tasks/dexterous/episodes")
+
+for episode_path in sorted(root.glob("episode_*.h5")):
+    with h5py.File(episode_path, "r") as f:
+        rgb = f["observations/rgb_front"][:]      # (T, H, W, 3)
+        qpos = f["robot_state/qpos"][:]           # (T, 36)
+        actions = f["actions"][:]                 # (T, 36)
+        language = f["language/instruction"][()]  # scalar bytes/string
+
+        # Your training / evaluation code here
+        ...
+```
+
+This interface is intentionally **compatible with LIBERO-2.0** tooling, so you can **reuse existing loaders and training pipelines** with minimal modifications.
+
+---
+
+## 📜 Citation
+
+If you find Dexora useful in your research, please consider citing our paper:
+
+```bibtex
+@misc{dexora2026,
+  title         = {Dexora: Open-Source VLA for High-DoF Bimanual Dexterity},
+  author        = {Dexora Team},
+  year          = {2026},
+  archivePrefix = {arXiv},
+  eprint        = {xxxx.xxxxx},
+  primaryClass  = {cs.RO}
+}
+```
+
+---
+
+For questions, collaborations, or feedback, please feel free to open an issue or contact the maintainers via the project page.
