@@ -23,7 +23,7 @@
 ## 🔥 News & Updates
 
 - **2025-11-03**: Released the comprehensive **Real-world Item List** (**347 objects, 17 categories**) with purchase links for reproducible experiments.
-- **2025-12-01**: Released the full **Real-World Dataset** (**10K episodes**) and **Simulation Dataset** (**100K episodes**) on Hugging Face.
+- **2025-12-01**: Released the full **Real-World Dataset** (**10K episodes**)  on Hugging Face.
 
 ---
 
