@@ -36,7 +36,7 @@ The Dexora corpus combines **high-fidelity real-world teleoperation data** with 
 The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M frames**, and **177.5 hours** of data. Demonstrations are collected using a **hybrid teleoperation system** that couples an **Exoskeleton** (for arm control) with **Vision Pro** (for dexterous hand control), enabling precise 36-DoF bimanual manipulation on real hardware.
 
 <p align="center">
-  <img src="assets/movie/dataset.gif" alt="Dexora Multi-view Dataset" width="100%">
+  <img src="assets/image/dataset.gif" alt="Dexora Multi-view Dataset" width="100%">
 </p>
 
 <p align="center">
