@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/arXiv-2026.xxxxx-B31B1B.svg" alt="arXiv"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
+  <a href="https://dexoravla.github.io/"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
 </p>
 
@@ -34,6 +34,14 @@ The Dexora corpus combines **high-fidelity real-world teleoperation data** with 
 ### A. Dexora Real-World Dataset (High-Fidelity)
 
 The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M frames**, and **177.5 hours** of data. Demonstrations are collected using a **hybrid teleoperation system** that couples an **Exoskeleton** (for arm control) with **Vision Pro** (for dexterous hand control), enabling precise 36-DoF bimanual manipulation on real hardware.
+
+<p align="center">
+  <img src="assets/movie/dataset.gif" alt="Dexora Multi-view Dataset" width="100%">
+</p>
+
+<p align="center">
+  <i>Video 1. <b>Synchronized Multi-View Recordings.</b> High-resolution streams from ego-centric, third-person, and wrist-mounted cameras, synchronized with 36-DoF robot proprioception.</i>
+</p>
 
 <p align="center">
   <img src="assets/image/real-data.JPG" alt="Dexora Real-World Dataset Mosaic" width="90%">
@@ -102,7 +110,7 @@ Dexora follows the **LIBERO-2.1** dataset standard. Each episode is stored as a 
 - **Observations**: multi-view RGB (and optionally depth), segmentation masks (when available).
 - **Robot State**: joint positions/velocities for dual arms and dual hands, gripper/hand states.
 - **Actions**: low-level control commands compatible with 36-DoF bimanual control.
-- **Language**: high-level task descriptions and step-wise subgoal annotations (where applicable).
+- **Language**: High-level task descriptions. We provide **5 diverse natural language instructions** per task, distributed evenly across all trajectories to enhance linguistic diversity.
 
 An example high-level directory layout is:
 
@@ -189,26 +197,25 @@ ln -s $DEXORA_DATA data
 
 ### 3. Loading Episodes (Example)
 
-Below is a minimal Python snippet illustrating how to iterate over LIBERO-2.0-style episodes in Dexora:
+Below is a minimal Python snippet illustrating how to load a Parquet episode from the real-world dataset:
 
 ```python
-import h5py
+import pandas as pd
 from pathlib import Path
 
-root = Path("/path/to/dexora/real/tasks/dexterous/episodes")
+# Example: Loading a Parquet episode from the real-world dataset
+root = Path("data/real/dexterous_manipulation/data/chunk-000")
+episode_path = root / "episode_000000.parquet"
 
-for episode_path in sorted(root.glob("episode_*.h5")):
-    with h5py.File(episode_path, "r") as f:
-        rgb = f["observations/rgb_front"][:]      # (T, H, W, 3)
-        qpos = f["robot_state/qpos"][:]           # (T, 36)
-        actions = f["actions"][:]                 # (T, 36)
-        language = f["language/instruction"][()]  # scalar bytes/string
+# Load trajectory using pandas
+df = pd.read_parquet(episode_path)
 
-        # Your training / evaluation code here
-        ...
+# Access data columns (Observation, Action, Proprioception)
+# Note: Columns are typically flattened in Parquet format
+print("Available keys:", df.columns)
+print("Actions shape:", df["action"].shape)  # Example access
+print("Language Instruction:", df["language_instruction"][0])
 ```
-
-This interface is intentionally **compatible with LIBERO-2.0** tooling, so you can **reuse existing loaders and training pipelines** with minimal modifications.
 
 ---
 
