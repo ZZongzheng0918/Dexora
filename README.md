@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/image/teaser.gif" alt="Dexora Teaser" width="80%">
+  <img src="assets/image/teaser.gif" alt="Dexora Teaser" width="100%">
 </p>
 
 ---
