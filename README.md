@@ -8,17 +8,6 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
 </p>
 
-<p align="center">
-  <img src="assets/image/teaser.gif" alt="Dexora Teaser" width="100%">
-</p>
-
----
-
-## Abstract
-
-**Dexora** is an open-source **Vision-Language-Action (VLA) system** designed for **36-DoF dual-arm, dual-hand dexterous manipulation**. Unlike prior gripper-centric datasets and policies, Dexora targets **high-DoF, bimanual dexterity** in both simulation and the real world, enabling complex tasks such as in-hand re-orientation, tool use, and multi-step assembly. Our system combines large-scale simulated data (**100K episodes, 6.5M frames**) with a carefully curated real-world dataset (**10K episodes, 3.2M frames**) collected via a **hybrid teleoperation setup (Exoskeleton + Vision Pro)**. To make high-DoF manipulation research **reproducible and scalable**, we follow the **LIBERO-2.1 data standard** and release a detailed **object inventory with purchase links**, so that other labs can recreate our environments with minimal friction.
-
----
 
 ## 🔥 News & Updates
 
