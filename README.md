@@ -41,11 +41,11 @@ The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M 
 </p>
 
 <p align="center">
-  <img src="assets/image/Categorized%20Robot%20Task%20Trajectory%20Distribution.png" alt="Dexora Task Categories" width="100%">
+  <img src="assets/image/Categorized%20Robot%20Task%20Trajectory%20Distribution.png" alt="Dexora Task Categories" width="120%">
 </p>
 
 <p align="center">
-  <img src="assets/image/Robot%20Arm%20Task%20Trajectory%20Distribution.png" alt="Dexora Robot Arm Trajectory Distribution" width="100%">
+  <img src="assets/image/Robot%20Arm%20Task%20Trajectory%20Distribution.png" alt="Dexora Robot Arm Trajectory Distribution" width="120%">
 </p>
 
 <p align="center">
