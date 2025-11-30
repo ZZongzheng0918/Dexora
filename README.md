@@ -11,9 +11,10 @@
 
 ## 🔥 News & Updates
 
+- **2025-11-03**: Released the comprehensive **Real-world Item List** (**347 objects, 17 categories**) with purchase links for reproducible experiments.
 - **2025-12-01**: Released the full **Real-World Dataset** (**10K episodes**)  on Hugging Face.
 
----
+--
 
 ## 📊 Dataset Overview
 
@@ -36,11 +37,11 @@ The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M 
 </p>
 
 <p align="center">
-  <i>Fig 1. <b>High-Fidelity Real-World Scenes.</b> Collected via our hybrid teleoperation system (Exoskeleton for arm + Vision Pro for hand), this dataset covers <b>347 objects</b> across diverse environments. It captures varying lighting conditions, background clutter, and precise bimanual interactions essential for robust policy learning.</i>
+  <i>Fig 1. <b>High-Fidelity Real-World Scenes.</b> Collected via our hybrid teleoperation system (Exoskeleton for arm + Vision Pro for hand), this dataset covers <b>347 objects</b> across diverse environments. It captures varying lighting conditions, background clutter, and precise bimanual interactions essential for robust policy learning. Panels (a–d) correspond to four task categories: <b>pick-and-place</b>, <b>assembly</b>, <b>articulation</b>, and <b>dexterous manipulation</b>.</i>
 </p>
 
 <p align="center">
-  <img src="assets/image/Categorized%20Robot%20Task%20Trajectory%20Distribution.png" alt="Dexora Task Taxonomy" width="100%">
+  <img src="assets/image/Categorized%20Robot%20Task%20Trajectory%20Distribution.png" alt="Dexora Task Categories" width="100%">
 </p>
 
 <p align="center">
@@ -48,7 +49,7 @@ The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M 
 </p>
 
 <p align="center">
-  <i>Fig 2. <b>Task Taxonomy & Action Distribution.</b> Unlike standard gripper datasets, Dexora emphasizes high-DoF dexterity. The real-world data distribution includes <b>Dexterous Manipulation (20%)</b> (e.g., <i>Twist Cap</i>, <i>Use Pen</i>, <i>Cut Leek</i>) and <b>Assembly (15%)</b> (e.g., <i>Separate Nested Bowls</i>, <i>Stack Ring Blocks</i>), in addition to <b>Articulated Objects (10%)</b>b> and <b>Pick-and-Place (55%)</b>b>.</i>
+  <i>Fig 2. <b>Task Categories & Action Distribution.</b> Unlike standard gripper datasets, Dexora emphasizes high-DoF dexterity. The real-world data distribution includes <b>Dexterous Manipulation (20%)</b> (e.g., <i>Twist Cap</i>, <i>Use Pen</i>, <i>Cut Leek</i>) and <b>Assembly (15%)</b> (e.g., <i>Separate Nested Bowls</i>, <i>Stack Ring Blocks</i>), in addition to <b>Articulated Objects (10%)</b> and <b>Pick-and-Place (55%)</b>.</i>
 </p>
 
 Both the episodes and annotations follow the **LIBERO-2.1 standard**, including synchronized **RGB observations**, **robot proprioception**, **actions**, and **language instructions**.
@@ -61,7 +62,7 @@ The Dexora simulation dataset contains **100K episodes** generated in **MuJoCo**
 
 | **Split**        | **Episodes** | **Frames** | **Hours (approx.)** | **Task Types**                                                                 |
 | :--------------- | -----------: | ---------: | -------------------: | :----------------------------------------------------------------------------- |
-| **Simulated**    | **100K**     | **6.5M**   | TBD                  | Pick-and-place, assembly, articulation, dexterous manipulation, long-horizon  |
+| **Simulated**    | **100K**     | **6.5M**   | TBD                  | Pick-and-place, assembly, articulation |
 | **Real-World**   | **10K**      | **3.2M**   | **177.5**            | Teleoperated bimanual tasks with high-DoF hands, cluttered scenes, fine-grain object interactions |
 
 ---
