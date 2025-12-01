@@ -54,7 +54,7 @@ The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M 
 
 Both the episodes and annotations follow the **LIBERO-2.1 standard**, including synchronized **RGB observations**, **robot proprioception**, **actions**, and **language instructions**.
 
-## 📦 Object Inventory & Reproducibility
+### Object Inventory & Reproducibility
 
 Reproducibility is a **core value** of Dexora. To enable other labs and industry teams to **faithfully recreate** our environments, we release a **curated object inventory** that mirrors the physical setup used in our real-world experiments.
 
