@@ -54,19 +54,6 @@ The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M 
 
 Both the episodes and annotations follow the **LIBERO-2.1 standard**, including synchronized **RGB observations**, **robot proprioception**, **actions**, and **language instructions**.
 
-### B. Dexora Simulation Dataset (Large-Scale)
-
-The Dexora simulation dataset contains **100K episodes** generated in **MuJoCo**, using the same **36-DoF dual-arm, dual-hand** embodiment as the real robot. It provides large-scale, embodiment-matched experience focused on core skills such as **pick-and-place**, **assembly**, and **articulation**, which can be used for pre-training basic competence before **fine-tuning on the real-world dataset**.
-
-### Summary Statistics (Sim vs Real)
-
-| **Split**        | **Episodes** | **Frames** | **Hours (approx.)** | **Task Types**                                                                 |
-| :--------------- | -----------: | ---------: | -------------------: | :----------------------------------------------------------------------------- |
-| **Simulated**    | **100K**     | **6.5M**   | TBD                  | Pick-and-place, assembly, articulation |
-| **Real-World**   | **10K**      | **3.2M**   | **177.5**            | Teleoperated bimanual tasks with high-DoF hands, cluttered scenes, fine-grain object interactions |
-
----
-
 ## 📦 Object Inventory & Reproducibility
 
 Reproducibility is a **core value** of Dexora. To enable other labs and industry teams to **faithfully recreate** our environments, we release a **curated object inventory** that mirrors the physical setup used in our real-world experiments.
@@ -92,6 +79,21 @@ The released Google Sheet follows the schema below:
 | **Purchase Link**         | Direct links to **Taobao** & **Amazon** for easy procurement and restock.   |
 
 You can **filter by task type**, **category**, or **store** to design controlled benchmarks or new task suites on top of Dexora.
+
+
+### B. Dexora Simulation Dataset (Large-Scale)
+
+The Dexora simulation dataset contains **100K episodes** generated in **MuJoCo**, using the same **36-DoF dual-arm, dual-hand** embodiment as the real robot. It provides large-scale, embodiment-matched experience focused on core skills such as **pick-and-place**, **assembly**, and **articulation**, which can be used for pre-training basic competence before **fine-tuning on the real-world dataset**.
+
+### Summary Statistics (Sim vs Real)
+
+| **Split**        | **Episodes** | **Frames** | **Hours (approx.)** | **Task Types**                                                                 |
+| :--------------- | -----------: | ---------: | -------------------: | :----------------------------------------------------------------------------- |
+| **Simulated**    | **100K**     | **6.5M**   | TBD                  | Pick-and-place, assembly, articulation |
+| **Real-World**   | **10K**      | **3.2M**   | **177.5**            | Teleoperated bimanual tasks with high-DoF hands, cluttered scenes, fine-grain object interactions |
+
+---
+
 
 ---
 
