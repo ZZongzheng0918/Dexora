@@ -92,10 +92,6 @@ The Dexora simulation dataset contains **100K episodes** generated in **MuJoCo**
 | **Simulated**    | **100K**     | **6.5M**   | TBD                  | Pick-and-place, assembly, articulation |
 | **Real-World**   | **10K**      | **3.2M**   | **177.5**            | Teleoperated bimanual tasks with high-DoF hands, cluttered scenes, fine-grain object interactions |
 
----
-
-
----
 
 ## 📂 Data Structure
 
