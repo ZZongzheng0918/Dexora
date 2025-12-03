@@ -22,13 +22,13 @@ The Dexora corpus combines **high-fidelity real-world teleoperation data** with 
 
 ### A. Dexora Real-World Dataset (High-Fidelity)
 
-The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M frames**, and **177.5 hours** of data. Demonstrations are collected using a **hybrid teleoperation system** that couples an **Exoskeleton** (for arm control) with **Vision Pro** (for dexterous hand control), enabling precise 36-DoF bimanual manipulation on real hardware.
+The Dexora real-world dataset consists of **11.5K teleoperated episodes**, **2.92M frames**, and **40.5 hours** of data. Demonstrations are collected using a **hybrid teleoperation system** that couples an **Exoskeleton** (for arm control) with **Vision Pro** (for dexterous hand control), enabling precise 36-DoF bimanual manipulation on real hardware.
 
 <p align="center">
   <img src="assets/image/dataset.gif" alt="Dexora Multi-view Dataset" width="100%">
 </p>
 
-<p align="center">
+<p>
   <i>Video 1. <b>Synchronized Multi-View Recordings.</b> High-resolution streams from ego-centric, third-person, and wrist-mounted cameras, synchronized with 36-DoF robot proprioception.</i>
 </p>
 
@@ -36,7 +36,7 @@ The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M 
   <img src="assets/image/real-data.JPG" alt="Dexora Real-World Dataset Mosaic" width="100%">
 </p>
 
-<p align="center">
+<p>
   <i>Fig 1. <b>High-Fidelity Real-World Scenes.</b> Collected via our hybrid teleoperation system (Exoskeleton for arm + Vision Pro for hand), this dataset covers <b>347 objects</b> across diverse environments. It captures varying lighting conditions, background clutter, and precise bimanual interactions essential for robust policy learning. Panels (a–d) correspond to four task categories: <b>pick-and-place</b>, <b>assembly</b>, <b>articulation</b>, and <b>dexterous manipulation</b>.</i>
 </p>
 
@@ -48,7 +48,7 @@ The Dexora real-world dataset consists of **10K teleoperated episodes**, **3.2M 
   <img src="assets/image/Robot%20Arm%20Task%20Trajectory%20Distribution.png" alt="Dexora Robot Arm Trajectory Distribution" width="120%">
 </p>
 
-<p align="center">
+<p>
   <i>Fig 2. <b>Task Categories & Action Distribution.</b> Unlike standard gripper datasets, Dexora emphasizes high-DoF dexterity. The real-world data distribution includes <b>Dexterous Manipulation (20%)</b> (e.g., <i>Twist Cap</i>, <i>Use Pen</i>, <i>Cut Leek</i>) and <b>Assembly (15%)</b> (e.g., <i>Separate Nested Bowls</i>, <i>Stack Ring Blocks</i>), in addition to <b>Articulated Objects (10%)</b> and <b>Pick-and-Place (55%)</b>.</i>
 </p>
 
@@ -89,7 +89,7 @@ The Dexora simulation dataset contains **100K episodes** generated in **MuJoCo**
 
 | **Split**        | **Episodes** | **Frames** | **Hours (approx.)** | **Task Types**                                                                 |
 | :--------------- | -----------: | ---------: | -------------------: | :----------------------------------------------------------------------------- |
-| **Simulated**    | **100K**     | **6.5M**   | TBD                  | Pick-and-place, assembly, articulation |
+| **Simulated**    | **——**     | **——**   | TBD                  | Pick-and-place, assembly, articulation |
 | **Real-World**   | **10K**      | **3.2M**   | **177.5**            | Teleoperated bimanual tasks with high-DoF hands, cluttered scenes, fine-grain object interactions |
 
 
@@ -150,7 +150,7 @@ data
 
 ---
 
-## 📥 Usage
+<!-- ## 📥 Usage
 
 ### 1. Environment Setup
 
@@ -207,7 +207,7 @@ print("Actions shape:", df["action"].shape)  # Example access
 print("Language Instruction:", df["language_instruction"][0])
 ```
 
----
+--- -->
 
 ## 📜 Citation
 
