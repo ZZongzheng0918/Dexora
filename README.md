@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/arXiv-2026.xxxxx-B31B1B.svg" alt="arXiv"></a>
-  <a href="[https://dexoravla.github.io/](https://github.com/ZZongzheng0918/Dexora?tab=readme-ov-file)"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
+  <a href="https://github.com/ZZongzheng0918/Dexora?tab=readme-ov-file"><img src="https://img.shields.io/badge/Project-Page-blue.svg" alt="Project Page"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
 </p>
 
