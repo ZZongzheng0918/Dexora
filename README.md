@@ -12,7 +12,7 @@
 ## 🔥 News & Updates
 
 
-- **2025-12-03**: Released the full **Real-World Dataset** (**10K episodes**)  on Hugging Face.
+- **2025-12-03**: Released the full **Real-World Dataset** (**10K episodes**) on [Hugging Face](https://huggingface.co/datasets/Dexora/Dexora_Real-World_Dataset).
 
 --
 
