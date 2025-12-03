@@ -29,7 +29,7 @@ The Dexora real-world dataset consists of **11.5K teleoperated episodes**, **2.9
 </p>
 
 <p>
-  <i>Video 1. <b>Synchronized Multi-View Recordings.</b> High-resolution streams from ego-centric, third-person, and wrist-mounted cameras, synchronized with 36-DoF robot proprioception.</i>
+  <i>Video 1. <b>Synchronized Multi-View Recordings.</b> High-resolution streams from four synchronized views — an ego-centric head-mounted camera, left and right wrist-mounted cameras, and a static third-person scene camera — synchronized with 36-DoF robot proprioception.</i>
 </p>
 
 <p align="center">
