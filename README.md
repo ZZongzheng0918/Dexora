@@ -75,7 +75,7 @@ The released Google Sheet follows the schema below:
 | Column                     | Description                                                                 |
 | :------------------------- | :-------------------------------------------------------------------------- |
 | **Object Name (EN & CN)** | Bilingual identification for global researchers.                            |
-| **Task Type**             | One of: `pick-and-place`, `assemble`, `articulation`, `dexterous`.          |
+| **Task Type**             | One of:  `pick-and-place`, `assemble`, `articulation`, `dexterous`.          |
 | **Purchase Link**         | Direct links to **Taobao** & **Amazon** for easy procurement and restock.   |
 
 You can **filter by task type**, **category**, or **store** to design controlled benchmarks or new task suites on top of Dexora.
