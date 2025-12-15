@@ -12,7 +12,7 @@
 ## 🔥 News & Updates
 
 
-- **2025-12-03**: Released the full **Real-World Dataset** (**10K episodes**) on [Hugging Face](https://huggingface.co/datasets/Dexora/Dexora_Real-World_Dataset).
+- **2025-12-03**: Released the full **Real-World Dataset** (**12.2K episodes**) on [Hugging Face](https://huggingface.co/datasets/Dexora/Dexora_Real-World_Dataset).
 
 --
 
@@ -22,7 +22,7 @@ The Dexora corpus combines **high-fidelity real-world teleoperation data** with 
 
 ### A. Dexora Real-World Dataset (High-Fidelity)
 
-The Dexora real-world dataset consists of **11.5K teleoperated episodes**, **2.92M frames**, and **40.5 hours** of data. Demonstrations are collected using a **hybrid teleoperation system** that couples an **Exoskeleton** (for arm control) with **Vision Pro** (for dexterous hand control), enabling precise 36-DoF bimanual manipulation on real hardware.
+The Dexora real-world dataset consists of **12.2K teleoperated episodes**, **2.92M frames**, and **40.5 hours** of data. Demonstrations are collected using a **hybrid teleoperation system** that couples an **Exoskeleton** (for arm control) with **Vision Pro** (for dexterous hand control), enabling precise 36-DoF bimanual manipulation on real hardware.
 
 <p align="center">
   <img src="assets/image/dataset.gif" alt="Dexora Multi-view Dataset" width="100%">
@@ -90,7 +90,7 @@ The Dexora simulation dataset contains **100K episodes** generated in **MuJoCo**
 | **Split**        | **Episodes** | **Frames** | **Hours (approx.)** | **Task Types**                                                                 |
 | :--------------- | -----------: | ---------: | -------------------: | :----------------------------------------------------------------------------- |
 | **Simulated**    | **——**     | **——**   | TBD                  | Pick-and-place, assembly, articulation |
-| **Real-World**   | **11.5K**      | **2.92M**   | **40.5**            | Teleoperated bimanual tasks with high-DoF hands, cluttered scenes, fine-grain object interactions |
+| **Real-World**   | **12.2K**      | **2.92M**   | **40.5**            | Teleoperated bimanual tasks with high-DoF hands, cluttered scenes, fine-grain object interactions |
 
 
 ## 📂 Data Structure
@@ -102,51 +102,49 @@ Dexora follows the **LIBERO-2.1** dataset standard. Each episode is stored as a 
 - **Actions**: low-level control commands compatible with 36-DoF bimanual control.
 - **Language**: High-level task descriptions. We provide **5 diverse natural language instructions** per task, distributed evenly across all trajectories to enhance linguistic diversity.
 
-An example high-level directory layout is:
+As of the **2025-12-12** release, we provide an additional **task-level** view (one folder per high-level task) on [Hugging Face](https://huggingface.co/datasets/Dexora/Dexora_Real-World_Dataset), alongside the original episode-centric **LIBERO-2.1** layout. The latest complete structure is:
 
 ```text
-data
-├── real
-│   ├── articulation
-│   │   └── ...
-│   ├── assembly
-│   │   └── ...
-│   ├── dexterous manipulation                     
-│   │   ├── data 
-│   │   │   ├── chunk-000 
-│   │   │   │   ├── episode_000000.parquet
-│   │   │   │   ├── episode_000001.parquet
-│   │   │   │   ├── episode_000002.parquet
-│   │   │   │   ├── ...
-│   │   │   ├── chunk-001
-│   │   │   │   ├── ...
+Dexora_Real-World_Dataset
+├── airbot_articulation
+│   ├── data
+│   │   ├── chunk-000
+│   │   │   ├── episode_000000.parquet
+│   │   │   ├── episode_000001.parquet
 │   │   │   ├── ...
-│   │   ├── meta
-│   │   │   ├── episodes.jsonl  
-│   │   │   ├── episodes_stats.jsonl   
-│   │   │   ├── info.json      
-│   │   │   ├── modality.json  
-│   │   │   ├── stats.json     
-│   │   │   ├── tasks.jsonl   
-│   │   ├── videos
-│   │   │   ├── chunk-000 
-│   │   │   │   ├── observation.images.front
-│   │   │   │   │   ├── episode_000000.mp4
-│   │   │   │   │   ├── episode_000001.mp4
-│   │   │   │   │   ├── ...
+│   │   ├── chunk-001
+│   │   ├── ...
+│   ├── videos
+│   │   ├── chunk-000
+│   │   │   ├── observation.images.front
+│   │   │   │   ├── episode_000000.mp4
+│   │   │   │   ├── episode_000001.mp4
 │   │   │   │   ├── ...
-│   │   │   ├── chunk-001
-│   │   │   │   ├── ...
-│   │   │   ├── ...
-│   ├── pick_and_place
-│   │   └── ...
+│   │   ├── chunk-001
+│   │   ├── ...
+│   ├── meta
+│   │   ├── info.json
+│   │   ├── episodes.jsonl
+│   │   ├── episodes_stats.jsonl
+│   │   ├── modality.json
+│   │   ├── stats.json
+│   │   ├── tasks.jsonl
+├── airbot_assemble
+│   └── ...
+├── airbot_dexterous
+│   └── ...
+├── airbot_pick_and_place
+│   └── ...
+├── task_level_episodes
+│   ├── apply_tape_to_bottle
+│   ├── arrange_apple_peach_pear
+│   ├── fold_towel_bimanual
+│   ├── move_toy_cars_from_plate_to_table
 │   ├── ...
-├── sim
-│   ├── ...
-
+└── README.md
 ```
 
-> **Note**: The exact folder names and file formats may be updated as we finalize the public release, but the overall **episode-centric LIBERO-2.1 structure** will be preserved.
+> **Note**: The exact folder names and file formats may be updated as we finalize the public release, but the overall **episode-centric LIBERO-2.1 structure** inside each `airbot_*` directory and the **task-level organization** (one folder per high-level task) will be preserved.
 
 ---
 
