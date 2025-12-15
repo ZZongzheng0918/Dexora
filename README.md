@@ -13,6 +13,8 @@
 
 
 - **2025-12-03**: Released the full **Real-World Dataset** (**12.2K episodes**) on [Hugging Face](https://huggingface.co/datasets/Dexora/Dexora_Real-World_Dataset).
+- **2025-12-12**: Released the **task-level** view of the real-world dataset (one folder per high-level task) on [Hugging Face](https://huggingface.co/datasets/Dexora/Dexora_Real-World_Dataset).
+- **Coming soon**: We will open-source the full **100K-episode simulation dataset**.
 
 --
 
@@ -83,7 +85,7 @@ You can **filter by task type**, **category**, or **store** to design controlled
 
 ### B. Dexora Simulation Dataset (Large-Scale)
 
-The Dexora simulation dataset contains **100K episodes** generated in **MuJoCo**, using the same **36-DoF dual-arm, dual-hand** embodiment as the real robot. It provides large-scale, embodiment-matched experience focused on core skills such as **pick-and-place**, **assembly**, and **articulation**, which can be used for pre-training basic competence before **fine-tuning on the real-world dataset**.
+The Dexora simulation dataset contains **100K episodes** generated in **MuJoCo**, using the same **36-DoF dual-arm, dual-hand** embodiment as the real robot. It provides large-scale, embodiment-matched experience focused on core skills such as **pick-and-place**, **assembly**, and **articulation**, which can be used for pre-training basic competence before **fine-tuning on the real-world dataset**. We will release this simulation dataset soon.
 
 ### Summary Statistics (Sim vs Real)
 
@@ -102,7 +104,7 @@ Dexora follows the **LIBERO-2.1** dataset standard. Each episode is stored as a 
 - **Actions**: low-level control commands compatible with 36-DoF bimanual control.
 - **Language**: High-level task descriptions. We provide **5 diverse natural language instructions** per task, distributed evenly across all trajectories to enhance linguistic diversity.
 
-As of the **2025-12-12** release, we provide an additional **task-level** view (one folder per high-level task) on [Hugging Face](https://huggingface.co/datasets/Dexora/Dexora_Real-World_Dataset), alongside the original episode-centric **LIBERO-2.1** layout. The latest complete structure is:
+We provide an additional **task-level** view (one folder per high-level task) on [Hugging Face](https://huggingface.co/datasets/Dexora/Dexora_Real-World_Dataset), alongside the original episode-centric **LIBERO-2.1** layout. The latest complete structure is:
 
 ```text
 Dexora_Real-World_Dataset
